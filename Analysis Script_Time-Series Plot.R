@@ -36,7 +36,7 @@ library(ggplot2)
 ## directly from their GitHub page using the raw URL.
 
 df.url <- "https://raw.githubusercontent.com/govex/COVID-19/refs/heads/master/data_tables/vaccine_data/us_data/time_series/time_series_covid19_vaccine_us.csv"
-df     <- read_csv(file = curl(df.url), show_col_types = FALSE) %>%
+df     <- read_csv(file = df.url, show_col_types = FALSE) %>%
               as.data.frame()
 
 
@@ -127,7 +127,7 @@ plot_1 <- df_byMonth %>%
 plot_2 <- df_byMonth %>%
             filter(Province_State %in% c("Connecticut", "Kansas")) %>%
             ggplot(data = ., aes(x = month, y = People_fully_vaccinated)) +
-                  geom_line(aes(color = Province_State), size = 1) +
+                  geom_line(aes(color = Province_State)) +
                   scale_y_continuous(labels = scales::comma) +
                   labs(title = "People Fully Vaccinated\nConnecticut vs. Kansas",
                        x = "Month",
