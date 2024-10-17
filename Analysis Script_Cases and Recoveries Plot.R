@@ -60,6 +60,7 @@ df %>%
   summarise(across(everything(), ~ sum(is.na(.))))
 # 2 NA values in `State`. 68 NA values in `Active`
 
+# Ready data for plotting
 df_processed <- df %>% 
   # Filter out NA values
   filter(!is.na(State), !is.na(Active)) %>% 
@@ -78,7 +79,7 @@ df_processed <- df %>%
 # Plot 1: Cases
 df_processed %>% 
   filter(type %in% c("Cases", "Recovered")) %>% 
-  filter(State == "Andhra Pradesh") %>% 
+  filter(State == "Andhra Pradesh") %>% # TODO: Change State
   ggplot(aes(Date, daily_counts)) +
   geom_area(aes(fill = type)) +
   scale_y_continuous(labels = scales::label_comma()) +
@@ -92,7 +93,7 @@ df_processed %>%
 df_processed %>% 
   filter(type == "Deaths") %>% 
   # TODO: Filter for one state
-  filter(State == "Andhra Pradesh") %>% 
+  filter(State == "Andhra Pradesh") %>% # TODO: Change State
   ggplot(aes(Date, daily_counts)) +
   geom_area(aes(fill = type)) +
   scale_fill_discrete(guide="none") +
