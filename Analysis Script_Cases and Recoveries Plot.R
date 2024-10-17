@@ -74,7 +74,7 @@ df_processed <- df %>%
 # Plot 1: Cases
 df_processed %>% 
   filter(type %in% c("Cases", "Recovered")) %>% 
-  filter(State == "Andhra Pradesh") %>% # TODO: Change State
+  filter(State == "Chhattisgarh") %>% # TODO: Change State
   ggplot(aes(Date, daily_counts)) +
   geom_area(aes(fill = type)) +
   scale_y_continuous(labels = scales::label_comma()) +
