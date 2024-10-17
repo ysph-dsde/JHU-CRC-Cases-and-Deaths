@@ -21,11 +21,6 @@ library(dplyr)
 library(ggplot2)
 library(lubridate)
 
-
-## Function to check if an element is not in a vector
-"%!in%" <- function(x,y)!('%in%'(x,y))
-
-
 ## ----------------------------------------------------------------------------
 ## LOAD IN THE DATA
 ## This data is from the COVID-19 Data Repository by the Center for Systems 
