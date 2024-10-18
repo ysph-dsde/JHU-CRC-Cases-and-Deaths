@@ -20,6 +20,7 @@ library(tidyr)
 library(dplyr)
 library(ggplot2)
 library(lubridate)
+library(plotly)
 
 ## ----------------------------------------------------------------------------
 ## LOAD IN THE DATA
@@ -27,44 +28,35 @@ library(lubridate)
 ## Science and Engineering (CSSE) at Johns Hopkins University. We load it in
 ## directly from their GitHub page using the raw URL.
 
-df.url <- "https://raw.githubusercontent.com/umich-cphds/cov-ind-19-data/refs/heads/master/source_data_latest.csv"
-df     <- read_csv(file = df.url, show_col_types = FALSE) 
+covid19_confirmed_url <- "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/refs/heads/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"
+covid19_confirmed_raw  <- read_csv(file = covid19_confirmed_url, show_col_types = FALSE)  
 
-
-## View the first and last few rows of the data
-head(df)
-tail(df)
-
-
-## Number of rows and columns
-dim(df)
-
+covid19_death_url <- "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/refs/heads/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv"
+covid19_death_raw  <- read_csv(file = covid19_death_url, show_col_types = FALSE) 
 
 ## ----------------------------------------------------------------------------
 ## DATA PREPARATION
 
-# Explore dataset
-df %>% 
-  select(State) %>% 
-  unique()
-# 38 unique states in India
-
-# Check for NA values
-df %>%
-  select(where(~ any(is.na(.)))) %>%
-  summarise(across(everything(), ~ sum(is.na(.))))
-# 2 NA values in `State`. 68 NA values in `Active`
-
+# Wrangle dataset
 # Ready data for plotting
-df_processed <- df %>% 
-  # Filter out NA values
-  filter(!is.na(State), !is.na(Active)) %>% 
-  # Make `Date` column a Date class
-  mutate(Date = dmy(Date)) %>% 
-  pivot_longer(cols = Cases:Deaths, 
-               names_to = "type", 
-               values_to = "daily_counts")
+covid19_confirmed_processed <- covid19_confirmed_raw %>%
+  rename(country_region = `Country/Region`) %>% 
+  pivot_longer(cols = "1/22/20":"3/9/23",
+               names_to = "date",
+               values_to = "daily_count") %>%
+  mutate(date = mdy(date)) %>% 
+  filter(country_region == "US")
 
+# Wrangle dataset
+# Ready data for plotting
+covid19_death_processed <- covid19_death_raw %>%
+  rename(country_region = `Country/Region`) %>% 
+  pivot_longer(cols = "1/22/20":"3/9/23",
+               names_to = "date",
+               values_to = "daily_count") %>%
+  mutate(date = mdy(date)) %>% 
+  filter(country_region == "US")
+  
 
 
 
@@ -72,30 +64,21 @@ df_processed <- df %>%
 ## DATA VISUALIZATION
 
 # Plot 1: Cases
-df_processed %>% 
-  filter(type %in% c("Cases", "Recovered")) %>% 
-  filter(State == "Andhra Pradesh") %>% # TODO: Change State
-  ggplot(aes(Date, daily_counts)) +
-  geom_area(aes(fill = type)) +
-  scale_y_continuous(labels = scales::label_comma()) +
-  labs(title = "Daily number of new COVID-19 Cases in Andhra Pradesh, India",
-       x = "Date",
-       y = "Daily Counts",
-       fill = NULL) +
+covid19_confirmed_processed %>% 
+  ggplot(aes(date, daily_count)) +
+  geom_line() +
+  scale_y_continuous(labels = scales::label_comma(),
+                     limits = c(0, 150000000)) +
+  labs(x = "Date", y = "Daily Counts", title = "Daily Confirmed Counts of COVID-19 in the US") +
   theme_minimal()
+  
 
 # Plot 2: Deaths
-df_processed %>% 
-  filter(type == "Deaths") %>% 
-  # TODO: Filter for one state
-  filter(State == "Andhra Pradesh") %>% # TODO: Change State
-  ggplot(aes(Date, daily_counts)) +
-  geom_area(aes(fill = type)) +
-  scale_fill_discrete(guide="none") +
+covid19_death_processed %>% 
+  ggplot(aes(date, daily_count)) +
+  geom_line() +
   scale_y_continuous(labels = scales::label_comma()) +
-  labs(title = "Daily number of new COVID-19 Deaths in Andhra Pradesh, India",
-       x = "Date",
-       y = "Daily Counts") +
+  labs(x = "Date", y = "Daily Counts", title = "Daily Death Counts of COVID-19 in the US") +
   theme_minimal()
 
 
