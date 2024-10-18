@@ -6,7 +6,7 @@
 ## Date:     2024-10-11
 ## 
 ## R version:    4.4.1
-## renv version: 1.0.9
+## renv version: 1.0.11
 
 
 ## ----------------------------------------------------------------------------
@@ -123,7 +123,7 @@ table(df_byMonth$Province_State, df_byMonth$month) %>%
 ## US states, major territories, and the district of Columbia
 plot_1 <- df_byMonth %>%
             filter(Province_State != "US" & Province_State %!in% extra_provinces) %>%
-            ggplot(data = ., aes(x = month, y = People_fully_vaccinated)) +
+            ggplot(data = ., aes(x = month, y = People_at_least_one_dose)) +
                   geom_line(aes(color = Province_State)) +
                   scale_y_continuous(labels = scales::comma) +
                   labs(title = "People Fully Vaccinated by State/Territory",
@@ -131,6 +131,7 @@ plot_1 <- df_byMonth %>%
                        y = "People Fully Vaccinated") +
                   theme_minimal()
 
+plot_1
 
 
 ##

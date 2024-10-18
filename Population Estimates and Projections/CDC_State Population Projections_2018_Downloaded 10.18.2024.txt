@@ -1,0 +1,72 @@
+"Notes"	"State"	"State Code"	Projected Populations
+	"Alabama"	"01"	4702519
+	"Alaska"	"02"	757331
+	"Arizona"	"04"	8059487
+	"Arkansas"	"05"	3023989
+	"California"	"06"	41377233
+	"Colorado"	"08"	5185795
+	"Connecticut"	"09"	3662364
+	"Delaware"	"10"	949937
+	"District of Columbia"	"11"	491009
+	"Florida"	"12"	22493926
+	"Georgia"	"13"	10601663
+	"Hawaii"	"15"	1402403
+	"Idaho"	"16"	1697103
+	"Illinois"	"17"	13186604
+	"Indiana"	"18"	6585386
+	"Iowa"	"19"	3025631
+	"Kansas"	"20"	2876728
+	"Kentucky"	"21"	4396540
+	"Louisiana"	"22"	4702379
+	"Maine"	"23"	1402465
+	"Maryland"	"24"	6384972
+	"Massachusetts"	"25"	6818537
+	"Michigan"	"26"	10667356
+	"Minnesota"	"27"	5810811
+	"Mississippi"	"28"	3033918
+	"Missouri"	"29"	6150240
+	"Montana"	"30"	1014482
+	"Nebraska"	"31"	1797687
+	"Nevada"	"32"	3292272
+	"New Hampshire"	"33"	1498286
+	"New Jersey"	"34"	9384233
+	"New Mexico"	"35"	2069834
+	"New York"	"36"	19574977
+	"North Carolina"	"37"	10425301
+	"North Dakota"	"38"	632627
+	"Ohio"	"39"	11647203
+	"Oklahoma"	"40"	3705437
+	"Oregon"	"41"	4158539
+	"Pennsylvania"	"42"	12764432
+	"Rhode Island"	"44"	1149555
+	"South Carolina"	"45"	4752323
+	"South Dakota"	"46"	800606
+	"Tennessee"	"47"	6668132
+	"Texas"	"48"	27800543
+	"Utah"	"49"	2904529
+	"Vermont"	"50"	684222
+	"Virginia"	"51"	8738451
+	"Washington"	"53"	7231073
+	"West Virginia"	"54"	1811457
+	"Wisconsin"	"55"	5960925
+	"Wyoming"	"56"	530409
+"Total"			330443861
+"---"
+"Dataset: State Population Projections 2004-2030"
+"Query Parameters:"
+"Year: 2018"
+"Group By: State"
+"Show Totals: True"
+"Show Zero Values: False"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/PopulationProjections.html for more information."
+"---"
+"Query Date: Oct 18, 2024 10:23:22 AM"
+"---"
+"Suggested Citation: Population Projections, United States, 2004 - 2030, by state, age and sex, on CDC WONDER Online Database,"
+"September 2005. Accessed at http://wonder.cdc.gov/population-projections.html on Oct 18, 2024 10:23:22 AM"
+"---"
+Caveats:
+"1. Population estimates and projections are updated periodically, population estimates and projections produced in the preceding"
+"years are superseded by the most recent population series for the same years. Population estimates are preferred to projections"
+"when estimates are available, unless the objective is to compare numbers with others in the projected series."
