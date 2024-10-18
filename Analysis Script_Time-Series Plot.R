@@ -16,7 +16,6 @@
 renv::restore()
 
 library(readr)
-library(curl)
 library(tidyr)
 library(dplyr)
 library(ggplot2)
@@ -63,6 +62,11 @@ sapply(df, function(x) sum(is.na(x))) %>%
         as.data.frame() %>% `colnames<-`("NA Count")
 
 
+
+## reduce down the cleaning part to show it is not the focus of the data
+
+
+
 ## Investigate the NA province
 na_province  = df[df$Province_State %in% NA, ] 
 
@@ -82,7 +86,12 @@ df <- df %>% group_by(month = lubridate::floor_date(Date, "month")) %>%
 df_byMonth <- aggregate(. ~ month + Province_State, df[, -c(1:2, 4)], sum)
 
 
-## There are 50 States, 5 Major Territories, 1 district, and 1 total.
+## Good sanity check that the rows are aggregated as expected
+head(df_byMonth)
+dim(df_byMonth)
+
+
+## There are 50 States, 5 Major Territories, 1 district, and 1 total metric.
 unique_provinces = df_byMonth$Province_State %>% unique()
 length(unique_provinces)
 
@@ -123,20 +132,36 @@ plot_1 <- df_byMonth %>%
                   theme_minimal()
 
 
+
+##
+## add the percentage of people fully vaccinated
+## check the total population from JHU
+
+## change the plot x-axis to be quarterly with Jan 2021 formatting
+
+## what is wrong with the plummet at the end of the plot?
+
+
+
+
+
+
 ## Compare two states
 plot_2 <- df_byMonth %>%
-            filter(Province_State %in% c("Connecticut", "Kansas")) %>%
-            ggplot(data = ., aes(x = month, y = People_fully_vaccinated)) +
-                  geom_line(aes(color = Province_State)) +
-                  scale_y_continuous(labels = scales::comma) +
-                  labs(title = "People Fully Vaccinated\nConnecticut vs. Kansas",
-                       x = "Month",
-                       y = "People Fully Vaccinated") +
-                  theme_minimal()
+  filter(Province_State %in% c("Connecticut", "Kansas")) %>%
+  ggplot(data = ., aes(x = month, y = People_fully_vaccinated)) +
+  geom_line(aes(color = Province_State)) +
+  scale_y_continuous(labels = scales::comma) +
+  labs(title = "People Fully Vaccinated\nConnecticut vs. Kansas",
+       x = "Month",
+       y = "People Fully Vaccinated") +
+  theme_minimal()
 
 
 ## Save a plot as a jpeg file
 plot_1 %>% ggsave("plot.jpeg", ., width = 10, height = 6, units = "in", dpi = 300)
+
+
 
 
 
