@@ -1,4 +1,5 @@
-## Population normalization methods:
+# U.S. POPULATION ESTIMATES
+## Sources and harmonization methods
 
 The Johns Hopkins Coronovirus Resource Center (JHU CRC) GitHub page ([GovEX - US Country Map](https://github.com/govex/COVID-19/tree/master/data_tables/Data_for_UScounty_map)) utilizes the [Economic Research Service U.S. Department of Agriculture](https://www.ers.usda.gov/) Data Prouducts site for intrpolated intercensal data and projecting population counts at the state level since the 2010 U.S. Census ([County-level Data Sets](https://www.ers.usda.gov/data-products/county-level-data-sets/county-level-data-sets-download-data/)).
 
