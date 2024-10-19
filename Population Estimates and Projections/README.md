@@ -8,10 +8,7 @@ A projection of census values from the 2020 Census through 2023 can be found on 
 
 While the original census dataset from JHU CRC's GovEX GitHub is included here, only the complete intercensal data from 2010-2019 sourced from the U.S. Census Bureau and the projection from the 2020 Census up to 2023 from the U.S. Department of Agriculture were harmonized and used our analysis script.
 
-Please see the "Population Data Cleaning Script.R" comments for further details describing the harmonization steps taken and accuracy checks completed to ensure the data integrety is maintained.
-
-
-Further description of intercensal and projection calculations/data handling can be found:
+Please see the "Population Data Cleaning Script.R" comments for further details describing the harmonization steps taken and accuracy checks completed to ensure the data integrety is maintained. Further description of intercensal and projection calculations/data handling can be found:
 - U.S. Census Bureau: [County Population Totals: 2010-2019](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-counties-total.html#par_textimage_70769902)
 - U.S. Department of Agriculture: [County-level Data Sets Documentation](https://www.ers.usda.gov/data-products/county-level-data-sets/documentation/)
 
