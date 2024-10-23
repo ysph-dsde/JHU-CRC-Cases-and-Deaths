@@ -91,7 +91,7 @@ plot_deaths <- covid19_death_processed %>%
   # Rename column names so they look nicer in plotly
   rename(Date = date, Count = daily_count) %>% 
   ggplot(aes(Date, Count)) +
-  geom_line(color = "#00356b") +
+  geom_line(color = "#880808") +
   scale_x_date(date_labels = "%m/%Y",
                breaks = as.Date(c("2020-01-01", "2021-01-01",
                                   "2022-01-01", "2023-01-01"))) +
