@@ -12,6 +12,7 @@
 ##              JHU CRC's vaccination data from their GovEX GitHub repo. Refer
 ##              to the main directory README file for additional information.
 
+
 ## ----------------------------------------------------------------------------
 ## SET UP THE ENVIRONMENT
 
