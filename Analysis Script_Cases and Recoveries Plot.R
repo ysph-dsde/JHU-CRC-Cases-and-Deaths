@@ -2,7 +2,7 @@
 ## From Yale's Public Health Data Science and Data Equity (DSDE) Team
 ##
 ## Workshop: Getting Started with Git and GitHub
-## Authors:  Howard Baik, M.S. and Shelby Golden, M.S.
+## Authors:  Howard Baik, M.S.
 ## Date:     2024-10-15
 ## 
 ## R version:    4.4.1
@@ -103,3 +103,4 @@ plot_deaths <- covid19_death_processed %>%
 
 # Make plot interactive
 ggplotly(plot_deaths)
+
