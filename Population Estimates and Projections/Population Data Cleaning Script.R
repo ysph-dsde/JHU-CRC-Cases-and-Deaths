@@ -8,7 +8,13 @@
 ## R version:    4.4.1
 ## renv version: 1.0.11
 ## 
-## Description: 
+## Description: This script harmonizes U.S. population census and intercensal
+##              year population estimates from two different sources: the
+##              U.S. Department of Agriculture, who processes and re-formats
+##              annual vintages from the U.S. Census Bureau, and the U.S. Census 
+##              Bureau anual release of vintage updates as well. Additional
+##              details about the data sources and pertinet links can be found
+##              in the README for this projects GitHub repo subdirectory.
 
 ## ----------------------------------------------------------------------------
 ## SET UP THE ENVIRONMENT
@@ -22,7 +28,6 @@ library(readr)
 library(tidyr)
 library(dplyr)
 library(stringr)
-library(ggplot2)
 
 
 ## This function will check if an element is not in a vector.
@@ -215,7 +220,8 @@ us_sum_test <- function(data, no_na = TRUE) {
 ## This data is from the COVID-19 Data Repository by the Center for Systems 
 ## Science and Engineering (CSSE) at Johns Hopkins University, the U.S.
 ## Census Bureau, and the U.S. Department of Agriculture. Further details
-## on the data can be found in the subdirectory README file.
+## on the data can be found in this projects GitHub repo's subdirectory 
+## README file.
 
 census_2010to2018_raw <- read_excel(
   "Population Estimates and Projections/U.S. Department of Agriculture_Population Estimates 2010 to 2018_JHU CRC.xls",

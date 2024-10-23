@@ -61,8 +61,8 @@ check_matched_row_entries <- function(data, variable, query_filter){
 
 ## This data is from the COVID-19 Data Repository managed by the Center for 
 ## Systems Science and Engineering (CSSE) at Johns Hopkins University (JHU), 
-## GitHub GovEX. Additional details can be found in the project repositories 
-## main directory's README file.
+## GitHub GovEX. Additional details can be found in the project GitHub repo's 
+## main directory README file.
 
 ## We load it in directly from the JHU CRC's GitHub page using the raw URL.
 df.url <- "https://raw.githubusercontent.com/govex/COVID-19/refs/heads/master/data_tables/vaccine_data/us_data/time_series/time_series_covid19_vaccine_us.csv"
@@ -84,7 +84,7 @@ dim(df)
 
 ## Check the variable class of each column.
 ## NOTE: sapply() works better than apply() in this scenario.
-sapply(df, class)
+sapply(df, class) %>% as.data.frame()
 
 
 ## The variable classes look as we'd expect. Now we'll check for missing values.
@@ -133,9 +133,10 @@ df %>%
   ggplot(data = ., aes(x = Date, y = People_at_least_one_dose)) +
       geom_line(aes(color = Province_State)) +
       scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6)) +
+      scale_x_date(date_breaks = "4 month", date_labels =  "%b %Y") +
       labs(title = "Raw Data Line Plot",
            x = "Daily Updates", y = "People With at Least One Dose") +
-      theme(legend.position = "none")
+      theme_minimal() + theme(legend.position = "none")
 
 
 ## It appears that some state/territories cumulative counts are purely monotonic, 
@@ -156,7 +157,7 @@ monotonic_result <- list()
 for (i in 1:length(make_daily_counts)) {
   check <- list()
   for (j in 1:length(unique(df$Province_State))) {
-    # Separate out the vector associated with one "Province_State" instantiation
+    # Separate out the vector associated with one "Province_State" entry
     # and one vaccination count method (column).
     subset <- df[df$Province_State %in% unique(df$Province_State)[j], make_daily_counts[i]]
     
@@ -189,7 +190,7 @@ apply(monotonic_result, 1, function(x) all(x)) %>% table()
 
 
 ## Unlike what we would expect, not all of the entries are monotonically
-## increasing. Only 11 "Province_State" instantiations are for all four 
+## increasing. Only 11 "Province_State" entries are for all four 
 ## vaccine count methods.
 ## 
 ## One source of this problem could be duplicate entries. We start checking for
@@ -197,8 +198,7 @@ apply(monotonic_result, 1, function(x) all(x)) %>% table()
 
 result <- list()
 for (i in 1:length(unique(df$Province_State))) {
-  # Separate out the dates vector associated with one "Province_State"
-  # instantiation.
+  # Separate out the dates vector associated with one "Province_State" entry.
   subset      <- df[df$Province_State %in% unique(df$Province_State)[i], "Date"]
   
   # Store the date ranges that occur more than once.
@@ -213,7 +213,7 @@ lapply(result, names) %>% do.call(c, .) %>% unique()
 
 # Filter out the dates so only the duplicate entries are shown and excess
 # metadata columns are removed.
-subset <- df[df$Date == "2022-06-17", -c("UID", "Country_Region")]
+subset <- df[df$Date == "2022-06-17", -c(2, 4)]
 for (i in 1:length(unique(df$Province_State))) {
   # Iterate the row-uniqueness test over each possible "Province_State"
   check_matched_row_entries(subset, "Province_State", unique(df$Province_State)[i])
@@ -229,9 +229,10 @@ df %>%
   ggplot(data = ., aes(x = Date, y = People_at_least_one_dose)) +
       geom_line(aes(color = Province_State)) +
       scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6)) +
+      scale_x_date(date_breaks = "4 month", date_labels =  "%b %Y") +
       labs(title = "Raw Data Line Plot - Duplicate Dates Removed",
            x = "Daily Updates", y = "People With at Least One Dose") +
-      theme(legend.position = "none")
+      theme_minimal() + theme(legend.position = "none")
 
 
 ## Removing duplicated dates did not seem to help reduce the observed
@@ -246,8 +247,7 @@ df %>%
 
 result <- list()
 for (i in 1:length(unique(df$Province_State))) {
-  # Separate out the dates vector associated with one "Province_State"
-  # instantiation.
+  # Separate out the dates vector associated with one "Province_State" entry.
   subset <- df[df$Province_State %in% unique(df$Province_State)[i], "Date"]
   
   check <- c()
@@ -299,13 +299,13 @@ all_col_monotonic
 ## counting methods. Outcomes equal to TRUE imply that the predictions are 
 ## exactly equal with the reported value.
 
-# Extract which "Province_State" instantiations were monotonically increasing
+# Extract which "Province_State" entries were monotonically increasing
 # for all vaccine counting methods.
 test_ir <- row.names(all_col_monotonic)[all_col_monotonic$`All Monotonic` == TRUE]
 
 result = list()
 for (i in 1:length(test_ir)) {
-  # Subset the data set for one "Province_State" instantiation, restricting the
+  # Subset the data set for one "Province_State" entry, restricting the
   # search space to only those that were monotonically increasing.
   subset <- df[df$Province_State %in% test_ir[i], ]
   
@@ -315,7 +315,7 @@ for (i in 1:length(test_ir)) {
     ir <- isoreg(subset[, make_daily_counts[j]], y = NULL)
     
     # Check the difference between the reported value and the "yf" prediction.
-    # This is an all-or-nothing Boolean test. NOTE: in "yf" "f" means "fitted" 
+    # This is an all-or-nothing Boolean test. NOTE: In "yf" "f" means "fitted" 
     # and "y" denote the prediction based on the isotonic fitting results.
     check_counts[j] <- all(subset[, make_daily_counts[j]] - ir$yf == 0)
   }
@@ -335,7 +335,7 @@ result
 
 result = list()
 for (i in 1:length(unique(df$Province_State))) {
-  # Subset the data set for one "Province_State" instantiation. This time the
+  # Subset the data set for one "Province_State" entry This time the
   # search space is not restricted.
   subset <- df[df$Province_State %in% unique(df$Province_State)[i], ]
   
@@ -344,7 +344,7 @@ for (i in 1:length(unique(df$Province_State))) {
     # Filter out the vaccine count method vector and fit using isoreg().
     ir <- isoreg(subset[, make_daily_counts[j]], y = NULL)
     
-    # Save the fitting results predicted y-values. NOTE: in "yf" "f" means
+    # Save the fitting results predicted y-values. NOTE: In "yf" "f" means
     # "fitted"and "y" denote the prediction based on the isotonic fitting
     # results.
     ir_yf[[j]] <- ir$yf
@@ -382,11 +382,12 @@ df_monotonic <- merge(df, result, by = c("Date", "Province_State"))
 df_monotonic %>%
   filter(Province_State %in% us_states) %>%
   ggplot(data = ., aes(x = Date, y = People_at_least_one_dose_yf)) +
-  geom_line(aes(color = Province_State)) +
-  scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6)) +
-  labs(title = "Smoothed Data Line Plot - Isotonic `yf` Prediction",
-       x = "Daily Updates", y = "People With at Least One Dose `yf`") +
-  theme(legend.position = "none")
+      geom_line(aes(color = Province_State)) +
+      scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6)) +
+      scale_x_date(date_breaks = "4 month", date_labels =  "%b %Y") +
+      labs(title = "Smoothed Data Line Plot - Isotonic `yf` Prediction",
+           x = "Daily Updates", y = "People With at Least One Dose `yf`") +
+      theme_minimal() + theme(legend.position = "none")
 
 
 ## Now that we have our smoothed, monotonic data we can proceed with generating
@@ -399,7 +400,7 @@ make_daily_counts_yf <- colnames(df_monotonic[, -c(1:4)]) %>% .[str_detect(., "y
 
 result = list()
 for (i in 1:length(unique(df_monotonic$Province_State))) {
-  # Subset the data set one for "Province_State" instantiation.
+  # Subset the data set one for "Province_State" entry.
   subset <- df_monotonic[df_monotonic$Province_State %in% unique(df$Province_State)[i], ]
   
   counts = list()
@@ -435,6 +436,7 @@ df_daily %>%
   ggplot(data = ., aes(x = Date, y = Doses_admin_yf_daily)) +
       geom_bar(stat = "identity",
                alpha = 0.25, aes(color = Province_State, fill = Province_State)) +
+      scale_x_date(date_breaks = "4 month", date_labels =  "%b %Y") +
       labs(title = "Daily Counts Bar Plot - Calculated from `yf`\nFor Alabama, Arkansas, and Maine", 
            x = "Daily Updates", y = "Daily Administration of Vaccines `yf`") +
       theme_minimal()
@@ -447,6 +449,7 @@ df_daily %>%
 ## We'll check to confirm that each "Province_State" entry covers the same
 ## number of days. The Boolean test is TRUE when all provinces have the same
 ## number of time-stamped entries.
+
 
 table(df_daily$Province_State, df_daily$Date) %>% 
   sapply(., function(x) x == 1) %>% all()
@@ -466,7 +469,7 @@ df_daily <- df_daily %>%
   group_by(month = lubridate::floor_date(Date, "month")) %>% as.data.frame()
 
 # In the aggregation, retain only the max value of the cumulative counts.
-# Organize aggregation by unique "Province_State" instantiations and dates
+# Organize aggregation by unique "Province_State" entries and dates
 # rounded down to the nearest month.
 maxCumulative <- aggregate(. ~ month + Province_State, df_daily[, -c(1, 3:8, 13:16)], max) %>%
   `colnames<-`(c("Month", colnames(.)[-1]))
@@ -491,20 +494,22 @@ df_byMonth %>%
   ggplot(data = ., aes(x = Month, y = People_at_least_one_dose_yf)) +
       geom_line(aes(color = Province_State)) +
       scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6)) +
-      labs(title = "Aggregated Data Line Plot\Max of Cumulative Sum",
+      scale_x_date(date_breaks = "4 month", date_labels =  "%b %Y") +
+      labs(title = "Aggregated Data Line Plot\nMax of Cumulative Sum",
            x = "Monthly Updates", y = "People With at Least One Dose `yf`") +
-      theme(legend.position = "none")
+      theme_minimal() + theme(legend.position = "none")
 
 
 # Plot the daily vaccination counts, to confirm there are no unexpected features.
 df_byMonth %>%
   filter(Province_State %in% us_states) %>%
   ggplot(data = ., aes(x = Month, y = People_at_least_one_dose_yf_daily)) +
-  geom_line(aes(color = Province_State)) +
-  scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6)) +
-  labs(title = "Aggregated Data Line Plot\nSum of Daily Counts",
-       x = "Monthly Updates", y = "People With at Least One Dose Daily Counts") +
-  theme(legend.position = "none")
+      geom_line(aes(color = Province_State)) +
+      scale_y_continuous(labels = unit_format(unit = "M", scale = 1e-6)) +
+      scale_x_date(date_breaks = "4 month", date_labels =  "%b %Y") +
+      labs(title = "Aggregated Data Line Plot\nSum of Daily Counts",
+           x = "Monthly Updates", y = "People With at Least One Dose `yf`") +
+      theme_minimal() + theme(legend.position = "none")
 
 
 # Boolean test is TRUE when all provinces have the same number of months
@@ -556,6 +561,7 @@ df_byMonth <- df_byMonth %>% `rownames<-`(NULL)
 
 
 write.csv(df_byMonth, "Vaccinations Aggregated by Month.csv")
+
 
 
 
