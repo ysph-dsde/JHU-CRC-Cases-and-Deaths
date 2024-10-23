@@ -28,34 +28,39 @@ library(plotly)
 ## Science and Engineering (CSSE) at Johns Hopkins University. We load it in
 ## directly from their GitHub page using the raw URL.
 
-covid19_confirmed_url <- "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/refs/heads/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"
+covid19_confirmed_url <- "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/refs/heads/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv"
 covid19_confirmed_raw  <- read_csv(file = covid19_confirmed_url, show_col_types = FALSE)  
 
-covid19_death_url <- "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/refs/heads/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv"
+covid19_death_url <- "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/refs/heads/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv"
 covid19_death_raw  <- read_csv(file = covid19_death_url, show_col_types = FALSE) 
 
 ## ----------------------------------------------------------------------------
 ## DATA PREPARATION
 
-# Wrangle dataset
-# Ready data for plotting
+# Prepare data for plotting
 covid19_confirmed_processed <- covid19_confirmed_raw %>%
-  rename(country_region = `Country/Region`) %>% 
   pivot_longer(cols = "1/22/20":"3/9/23",
                names_to = "date",
-               values_to = "daily_count") %>%
+               values_to = "cumulative_count") %>%
   mutate(date = mdy(date)) %>% 
-  filter(country_region == "US")
+  group_by(date) %>% 
+  summarise(cumulative_count = sum(cumulative_count, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  mutate(daily_count = c(cumulative_count[1], diff(cumulative_count)))
 
-# Wrangle dataset
-# Ready data for plotting
+
+
+# Prepare data for plotting
 covid19_death_processed <- covid19_death_raw %>%
-  rename(country_region = `Country/Region`) %>% 
   pivot_longer(cols = "1/22/20":"3/9/23",
                names_to = "date",
-               values_to = "daily_count") %>%
+               values_to = "cumulative_count") %>%
   mutate(date = mdy(date)) %>% 
-  filter(country_region == "US")
+  group_by(date) %>% 
+  summarise(cumulative_count = sum(cumulative_count, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  mutate(daily_count = c(cumulative_count[1], diff(cumulative_count)))
+  
   
 
 
@@ -64,21 +69,37 @@ covid19_death_processed <- covid19_death_raw %>%
 ## DATA VISUALIZATION
 
 # Plot 1: Cases
-covid19_confirmed_processed %>% 
-  ggplot(aes(date, daily_count)) +
-  geom_line() +
-  scale_y_continuous(labels = scales::label_comma(),
-                     limits = c(0, 150000000)) +
-  labs(x = "Date", y = "Daily Counts", title = "Daily Confirmed Counts of COVID-19 in the US") +
+plot_cases <- covid19_confirmed_processed %>% 
+  # Rename column names so they look nicer in plotly
+  rename(Date = date, Count = daily_count) %>% 
+  ggplot(aes(Date, Count)) +
+  geom_line(color = "#00356b") +
+  scale_x_date(date_labels = "%m/%Y",
+               breaks = as.Date(c("2020-01-01", "2021-01-01",
+                                  "2022-01-01", "2023-01-01"))) +
+  scale_y_continuous(labels = scales::label_comma()) +
+  labs(x = NULL, 
+       y = "Daily Counts", 
+       title = "Daily Confirmed Counts of COVID-19 in the US") +
   theme_minimal()
-  
+
+# Make plot interactive
+ggplotly(plot_cases)  
 
 # Plot 2: Deaths
-covid19_death_processed %>% 
-  ggplot(aes(date, daily_count)) +
-  geom_line() +
+plot_deaths <- covid19_death_processed %>% 
+  # Rename column names so they look nicer in plotly
+  rename(Date = date, Count = daily_count) %>% 
+  ggplot(aes(Date, Count)) +
+  geom_line(color = "#00356b") +
+  scale_x_date(date_labels = "%m/%Y",
+               breaks = as.Date(c("2020-01-01", "2021-01-01",
+                                  "2022-01-01", "2023-01-01"))) +
   scale_y_continuous(labels = scales::label_comma()) +
-  labs(x = "Date", y = "Daily Counts", title = "Daily Death Counts of COVID-19 in the US") +
+  labs(x = NULL, 
+       y = "Daily Counts",
+       title = "Daily Death Counts of COVID-19 in the US") +
   theme_minimal()
 
-
+# Make plot interactive
+ggplotly(plot_deaths)
