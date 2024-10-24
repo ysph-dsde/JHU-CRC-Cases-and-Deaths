@@ -103,5 +103,3 @@ plot_deaths <- covid19_death_processed %>%
 
 # Make plot interactive
 ggplotly(plot_deaths)
-
-# Making a change
