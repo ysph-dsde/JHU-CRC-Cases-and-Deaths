@@ -24,13 +24,9 @@ There are two GitHub repositories associated with this workshop. The link to the
 
 ### Overview Of Contents
 
-- **For the analysis:** "Analysis Script_Vaccinations Time-Series Plot.R"
-- **For cleaning the raw data:** "Cleaning Script_Vaccinations.R"
-- **For harmonizing census data:** "Population Estimates and Projections/Population Data Cleaning Script.R"
+- **For the analysis:** `Analysis Script_Cases and Deaths Plot.R`
 - **R version:** 4.4.1
 - ``renv`` is included to reproduce the environment.
-
-**NOTE:** The cleaning and census harmonization scripts have already been run to generate the necessary files called in the analysis workflow. Users of this repository will only need to open the "Analysis Script_Vaccinations Time-Series Plot.R".
 
 ## Using this Repository
 
@@ -62,21 +58,21 @@ The repository needs to be copied into your personal GitHub for the workshop in 
 
 3. Navigate to the file location you want to store the repository copy.
    ```
-   cd "/file_location/"
+   cd file_location
    ```
 
 5. Clone a bare copy of the repository.
    ```
    # using SSH
-   git clone --bare git@github.com:ysph-dsde/JHU-CRC-Vaccinations.git
+   git clone --bare git@github.com:ysph-dsde/JHU-CRC-Cases-and-Deaths.git
    
    # or using HTTPS
-   git clone --bare https://github.com/ysph-dsde/JHU-CRC-Vaccinations.git
+   git clone --bare https://github.com/ysph-dsde/JHU-CRC-Cases-and-Deaths.git
    ```
    
-6. Open the project file.
+6. Navigate to the project file.
    ```
-   cd "JHU-CRC-Vaccinations.git"
+   cd JHU-CRC-Cases-and-Deaths.git
    ```
    
 7. Push a mirror of the cloned Git file to your newly created GitHub repository.
@@ -91,7 +87,7 @@ The repository needs to be copied into your personal GitHub for the workshop in 
 8. Delete the bare cloned file used to create a new remote repository.
    ```
    cd ..                                    # Go back one file location
-   rm -rf JHU-CRC-Vaccinations.git          # Delete the bare clone
+   rm -rf JHU-CRC-Cases-and-Deaths.git          # Delete the bare clone
    ```
 9. Proceed with cloning the newly copied repository.
 
@@ -101,9 +97,9 @@ Now that you have copied this repository into your own GitHub, you are ready to 
   
 1. Open Terminal.
 
-2. Navigate to the file location you want to sotre the repository copy.
+2. Navigate to the file location you want to store the repository copy.
    ```
-   cd "/file_location/"
+   cd file_location
    ```
 4. Clone the newly created GitHub repository.
    ```
@@ -115,6 +111,7 @@ Now that you have copied this repository into your own GitHub, you are ready to 
    ```
 
 5. **OPTIONAL:** You can reset the repository history, which will clear the previous commits, by running the following block of code (Source: [StackExchange by Zeelot](https://stackoverflow.com/questions/9683279/make-the-current-commit-the-only-initial-commit-in-a-git-repository)).
+    
     ```
     git checkout --orphan tempBranch         # Create a temporary branch
     git add -A                               # Add all files and commit them
