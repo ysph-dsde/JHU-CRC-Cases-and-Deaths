@@ -88,6 +88,7 @@ ggplotly(plot_cases)
 
 # Plot 2: Deaths
 plot_deaths <- covid19_death_processed %>% 
+  filter(daily_count > 0) %>% 
   # Rename column names so they look nicer in plotly
   rename(Date = date, Count = daily_count) %>% 
   ggplot(aes(Date, Count)) +
