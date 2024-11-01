@@ -39,26 +39,38 @@ covid19_death_raw  <- read_csv(file = covid19_death_url, show_col_types = FALSE)
 
 # Prepare data for plotting
 covid19_confirmed_processed <- covid19_confirmed_raw %>%
+  # Reshape data from wide to long format, with dates as a single column
   pivot_longer(cols = "1/22/20":"3/9/23",
                names_to = "date",
                values_to = "cumulative_count") %>%
+  # Convert date column to Date type in month-day-year format
   mutate(date = mdy(date)) %>% 
+  # Group data by date
   group_by(date) %>% 
+  # Sum counts by date, removing NA values
   summarise(cumulative_count = sum(cumulative_count, na.rm = TRUE)) %>% 
+  # Remove grouping
   ungroup() %>% 
+  # Calculate daily counts by finding the difference in cumulative counts
   mutate(daily_count = c(cumulative_count[1], diff(cumulative_count)))
 
 
 
 # Prepare data for plotting
 covid19_death_processed <- covid19_death_raw %>%
+  # Reshape data from wide to long format, with dates as a single column
   pivot_longer(cols = "1/22/20":"3/9/23",
                names_to = "date",
                values_to = "cumulative_count") %>%
+  # Convert date column to Date type in month-day-year format
   mutate(date = mdy(date)) %>% 
+  # Group data by date
   group_by(date) %>% 
+  # Sum counts by date, removing NA values
   summarise(cumulative_count = sum(cumulative_count, na.rm = TRUE)) %>% 
+  # Remove grouping
   ungroup() %>% 
+  # Calculate daily counts by finding the difference in cumulative counts
   mutate(daily_count = c(cumulative_count[1], diff(cumulative_count)))
   
   
@@ -70,10 +82,12 @@ covid19_death_processed <- covid19_death_raw %>%
 
 # Plot 1: Cases
 plot_cases <- covid19_confirmed_processed %>% 
-  # Rename column names so they look nicer in plotly
+  # Rename column names so they look nicer on plot
   rename(Date = date, Count = daily_count) %>% 
+  # Start ggplot with date on x-axis and daily count on y-axis
   ggplot(aes(Date, Count)) +
   geom_line(color = "#00356b") +
+  # Format x-axis dates as month/year
   scale_x_date(date_labels = "%m/%Y",
                breaks = as.Date(c("2020-01-01", "2021-01-01",
                                   "2022-01-01", "2023-01-01"))) +
@@ -89,10 +103,12 @@ ggplotly(plot_cases)
 # Plot 2: Deaths
 plot_deaths <- covid19_death_processed %>% 
   filter(daily_count > 0) %>% 
-  # Rename column names so they look nicer in plotly
+  # Rename column names so they look nicer on plot
   rename(Date = date, Count = daily_count) %>% 
+  # Start ggplot with date on x-axis and daily count on y-axis
   ggplot(aes(Date, Count)) +
   geom_line(color = "#880808") +
+  # Format x-axis dates as month/year
   scale_x_date(date_labels = "%m/%Y",
                breaks = as.Date(c("2020-01-01", "2021-01-01",
                                   "2022-01-01", "2023-01-01"))) +
