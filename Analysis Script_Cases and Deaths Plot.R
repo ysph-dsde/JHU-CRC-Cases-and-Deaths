@@ -86,15 +86,19 @@ plot_cases <- covid19_confirmed_processed %>%
   rename(Date = date, Count = daily_count) %>% 
   # Start ggplot with date on x-axis and daily count on y-axis
   ggplot(aes(Date, Count)) +
+  # Add a line plot with a specified color
   geom_line(color = "#00356b") +
   # Format x-axis dates as month/year
   scale_x_date(date_labels = "%m/%Y",
                breaks = as.Date(c("2020-01-01", "2021-01-01",
                                   "2022-01-01", "2023-01-01"))) +
+  # Format the y-axis to display counts with commas
   scale_y_continuous(labels = scales::label_comma()) +
+  # Add labels and title to the plot
   labs(x = NULL, 
        y = "Daily Counts", 
        title = "Daily Confirmed Counts of COVID-19 in the US") +
+  # Apply a minimal theme to the plot for a clean appearance
   theme_minimal()
 
 # Make plot interactive
@@ -107,15 +111,19 @@ plot_deaths <- covid19_death_processed %>%
   rename(Date = date, Count = daily_count) %>% 
   # Start ggplot with date on x-axis and daily count on y-axis
   ggplot(aes(Date, Count)) +
+  # Add a line plot with a specified color
   geom_line(color = "#880808") +
   # Format x-axis dates as month/year
   scale_x_date(date_labels = "%m/%Y",
                breaks = as.Date(c("2020-01-01", "2021-01-01",
                                   "2022-01-01", "2023-01-01"))) +
+  # Format the y-axis to display counts with commas
   scale_y_continuous(labels = scales::label_comma()) +
+  # Add labels and title to the plot
   labs(x = NULL, 
        y = "Daily Counts",
        title = "Daily Death Counts of COVID-19 in the US") +
+  # Apply a minimal theme to the plot for a clean appearance
   theme_minimal()
 
 # Make plot interactive
