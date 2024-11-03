@@ -49,7 +49,7 @@ The repository needs to be copied into your personal GitHub for the workshop in 
 
 **METHOD 2:** Copying Using Terminal
 
-These directions follow GitHub's [Duplicating a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository) page.
+These directions follow GitHub's [duplicating a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository) page.
 
 1. [Create a new](https://github.com/new) GitHub repository ([Further documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)).
    
