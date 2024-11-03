@@ -2,7 +2,7 @@
 
 ## About The Coffee, Cookie and Coding $\left(C^3\right)$ Workshops
 
-Yale's Public Health Data Science and Data Equity (DSDE) team created this workshop series for Public Health and Biostatistics masters-level students at Yale. They are designed to help learners effectively leverage computational tools and analytical methods in their educational and professional endeavors. You can find out more about past and upcoming tutorials on our YouTube (link) and website (event page link).
+Yale's Public Health Data Science and Data Equity (DSDE) team created this workshop series for Public Health and Biostatistics masters-level students at Yale. They are designed to help learners effectively leverage computational tools and analytical methods in their educational and professional endeavors. You can find out more about past and upcoming tutorials on our YouTube (link) and [website](https://ysph.yale.edu/public-health-research-and-practice/research-centers-and-initiatives/public-health-data-science-and-data-equity/events/).
 
 ## About Workshop
 
@@ -15,7 +15,7 @@ We will be launching our Coffee, Cookie and Coding $\left(C^3\right)$ workshop s
 - Configure your local Git and personal GitHub accounts and set up their security keys.
 - Share and contribute to projects with an example created in RStudio.
 
-You can find out more about past and upcoming tutorials on our YouTube (link) and website (event page link). If you are affiliated with Yale, you can set up an office hour appointment with one of the data scientists ([Bookings Page](https://outlook.office365.com/owa/calendar/DataScienceDataEquityOfficeHours@yale.edu/bookings/)).
+You can find out more about past and upcoming tutorials on our YouTube (link) and [website](https://ysph.yale.edu/public-health-research-and-practice/research-centers-and-initiatives/public-health-data-science-and-data-equity/events/). If you are affiliated with Yale, you can set up an office hour appointment with one of the data scientists ([Bookings Page](https://outlook.office365.com/owa/calendar/DataScienceDataEquityOfficeHours@yale.edu/bookings/)).
 
 ## About Repository
 
@@ -48,6 +48,8 @@ The repository needs to be copied into your personal GitHub for the workshop in 
 5. Proceed with cloning the newly copied repository.
 
 **METHOD 2:** Copying Using Terminal
+
+These directions follow GitHub's [Duplicating a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository) page.
 
 1. [Create a new](https://github.com/new) GitHub repository ([Further documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)).
    
