@@ -19,7 +19,7 @@ You can find out more about past and upcoming tutorials on our YouTube (coming s
 
 ## About Repository
 
-There are two GitHub repositories associated with this workshop. The link to the second repository can be found here: [JHU-CRC-Vaccinations](https://github.com/ysph-dsde/JHU-CRC-Vaccinations).
+There are two GitHub repositories associated with this workshop and one unifying repository with the workshop slides. The link to the second repository can be found here: [JHU-CRC-Vaccinations](https://github.com/ysph-dsde/JHU-CRC-Vaccinations). The link to the unifying repository with the workshop slides can be found here: [Getting-Started-with-Git-and-GitHub-Workshop](https://github.com/ysph-dsde/Getting-Started-with-Git-and-GitHub-Workshop).
 
 ### Overview Of Contents
 
