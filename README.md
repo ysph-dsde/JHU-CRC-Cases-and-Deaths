@@ -37,7 +37,7 @@ The repository needs to be copied into your personal GitHub for the workshop in 
 
 **NOTE:** This method is not a Fork. You can learn more about GitHub Importer [here](https://docs.github.com/en/migrations/importing-source-code/using-github-importer/importing-a-repository-with-github-importer).
 
-1. Under the "Repositories" tab of your personal GitHub page, selecte the "New" button in the top-right corner. This will start the process of starting a new repository.
+1. Under the "Repositories" tab of your personal GitHub page, select the "New" button in the top-right corner. This will start the process of starting a new repository.
 
 2. At the top of the page is a hyperlink to import a repository. Open that link ([GitHub Importer](https://github.com/new/import)).
 
