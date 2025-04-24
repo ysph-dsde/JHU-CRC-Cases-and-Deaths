@@ -2,7 +2,7 @@
 
 ## About The Coffee, Cookie and Coding $\left(C^3\right)$ Workshops
 
-Yale's Public Health Data Science and Data Equity (DSDE) team created this workshop series for Public Health and Biostatistics masters-level students at Yale. They are designed to help learners effectively leverage computational tools and analytical methods in their educational and professional endeavors. You can find out more about past and upcoming tutorials on our YouTube (link) and [website](https://ysph.yale.edu/public-health-research-and-practice/research-centers-and-initiatives/public-health-data-science-and-data-equity/events/).
+Yale's Public Health Data Science and Data Equity (DSDE) team created this workshop series for Public Health and Biostatistics masters-level students at Yale. They are designed to help learners effectively leverage computational tools and analytical methods in their educational and professional endeavors. You can find out more about past and upcoming tutorials on our YouTube (coming soon) and [website](https://ysph.yale.edu/public-health-research-and-practice/research-centers-and-initiatives/public-health-data-science-and-data-equity/events/).
 
 ## About Workshop
 
@@ -15,11 +15,11 @@ We will be launching our Coffee, Cookie and Coding $\left(C^3\right)$ workshop s
 - Configure your local Git and personal GitHub accounts and set up their security keys.
 - Share and contribute to projects with an example created in RStudio.
 
-You can find out more about past and upcoming tutorials on our YouTube (link) and [website](https://ysph.yale.edu/public-health-research-and-practice/research-centers-and-initiatives/public-health-data-science-and-data-equity/events/). If you are affiliated with Yale, you can set up an office hour appointment with one of the data scientists ([Bookings Page](https://outlook.office365.com/owa/calendar/DataScienceDataEquityOfficeHours@yale.edu/bookings/)).
+You can find out more about past and upcoming tutorials on our YouTube (coming soon) and [website](https://ysph.yale.edu/public-health-research-and-practice/research-centers-and-initiatives/public-health-data-science-and-data-equity/events/). If you are affiliated with Yale, you can set up an office hour appointment with one of the data scientists ([Bookings Page](https://outlook.office365.com/owa/calendar/DataScienceDataEquityOfficeHours@yale.edu/bookings/)).
 
 ## About Repository
 
-There are two GitHub repositories associated with this workshop. The link to the second repository can be found here: [JHU-CRC-Vaccinations](https://github.com/ysph-dsde/JHU-CRC-Vaccinations).
+There are two GitHub repositories associated with this workshop and one unifying repository with the workshop slides. The link to the second repository can be found here: [JHU-CRC-Vaccinations](https://github.com/ysph-dsde/JHU-CRC-Vaccinations). The link to the unifying repository with the workshop slides can be found here: [Getting-Started-with-Git-and-GitHub-Workshop](https://github.com/ysph-dsde/Getting-Started-with-Git-and-GitHub-Workshop).
 
 ### Overview Of Contents
 
@@ -37,7 +37,7 @@ The repository needs to be copied into your personal GitHub for the workshop in 
 
 **NOTE:** This method is not a Fork. You can learn more about GitHub Importer [here](https://docs.github.com/en/migrations/importing-source-code/using-github-importer/importing-a-repository-with-github-importer).
 
-1. Under the "Repositories" tab of your personal GitHub page, selecte the "New" button in the top-right corner. This will start the process of starting a new repository.
+1. Under the "Repositories" tab of your personal GitHub page, select the "New" button in the top-right corner. This will start the process of starting a new repository.
 
 2. At the top of the page is a hyperlink to import a repository. Open that link ([GitHub Importer](https://github.com/new/import)).
 
@@ -49,7 +49,7 @@ The repository needs to be copied into your personal GitHub for the workshop in 
 
 **METHOD 2:** Copying Using Terminal
 
-These directions follow GitHub's [Duplicating a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository) page.
+These directions follow GitHub's [duplicating a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository) page.
 
 1. [Create a new](https://github.com/new) GitHub repository ([Further documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)).
    
