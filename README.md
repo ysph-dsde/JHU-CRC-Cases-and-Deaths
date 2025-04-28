@@ -21,7 +21,7 @@ Upon completing the workshop, you will be able to:
 
 ## Overview Of Contents
 
-- **For the analysis:** `Analysis Script_Cases and Deaths Plot.R`
+- **For the analysis:** `Plot Cases and Deaths.R`
 - **R:** version 4.4.3
 - **RStudio IDE:** version 2024.12.1+563
 - ``renv`` is included to reproduce the environment.
