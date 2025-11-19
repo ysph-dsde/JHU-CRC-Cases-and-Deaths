@@ -4,7 +4,7 @@
 
 Yale's [Public Health Data Science and Data Equity (DSDE)](https://ysph.yale.edu/research/research-centers-and-initiatives/public-health-data-science-and-data-equity/) team hosts workshops, tutorials, and information sessions known as Coffee, Cookie and Coding ($C^3$) Workshops. These sessions are designed to help Public Health and Biostatistics masters-level students at Yale effectively leverage computational tools and analytical methods in their educational and professional endeavors. While primarily intended for the Yale community, all are welcome and encouraged to attend and benefit from our offerings.
 
-You can find out more about past and upcoming work on our [website](https://ysph.yale.edu/public-health-research-and-practice/research-centers-and-initiatives/public-health-data-science-and-data-equity/events/). Additional tutorials will soon be available on our YouTube channel. If you are affiliated with Yale, you can set up an office hour appointment with one of our data scientists on our [Bookings Page](https://outlook.office365.com/book/DataScienceDataEquityOfficeHours@yale.edu/?ismsaljsauthenabled=true). The workshop content, including slides, handouts, and adaptations for asynchronous learning, is available on our [Book of Workshops](https://ysph-dsde.github.io/Book-of-Workshops/Git-and-GitHub/) webpage.
+You can find out more about past and upcoming work on our [website](https://ysph.yale.edu/public-health-research-and-practice/research-centers-and-initiatives/public-health-data-science-and-data-equity/events/). Additional tutorials will soon be available on our YouTube channel. If you are affiliated with Yale, you can set up an office hour appointment with one of our data scientists on our [Bookings Page](https://outlook.office365.com/book/DataScienceDataEquityOfficeHours@yale.edu/?ismsaljsauthenabled=true).
 
 ## About Workshop
 
@@ -24,7 +24,9 @@ Upon completing the workshop, you will be able to:
 - **For the analysis:** `Plot Cases and Deaths.R`
 - **R:** version 4.4.3
 - **RStudio IDE:** version 2024.12.1+563
-- ``renv`` is included to reproduce the environment.
+- `renv` version: 1.0.11. This is included to reproduce the coding environment.
+
+The workshop content, including slides, handouts, and adaptations for asynchronous learning, is available on our [Book of Workshops]([https://ysph-dsde.github.io/Book-of-Workshops/Git-and-GitHub/](https://ysph-dsde.github.io/Book-of-Workshops/Workshops/Git-and-GitHub/git-github-index.html)) webpage.
 
 ## Using this Repository
 
