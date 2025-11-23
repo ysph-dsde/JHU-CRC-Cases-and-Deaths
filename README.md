@@ -32,7 +32,7 @@ The workshop content, including slides, handouts, and adaptations for asynchrono
 
 This repository contains prepared code for students to practice version control using Git and GitHub with real-world public health data. Please create a "clean-break" of the repository in your own GitHub before cloning it. Directions are available on the [Accessing the Codespaces](https://ysph-dsde.github.io/Book-of-Workshops/Workshops/Data-Visualization-with-ggplot2/visualization-index.html#accessing-the-codespaces) section of this workshop's Book of Workshops webpage.
 
-Please note that all materials provided in this workshop, including any code added to your personal repository, belongs to DSDE. When using or referencing this material, please ensure to cite it correctly to give proper credit to the original authors.
+Please note that all slides, handouts, and code provided in this workshop, including any added to your personal repository, belongs to DSDE. When using or referencing this material, please ensure to cite it correctly to give proper credit to the original authors.
 
 ## About the Data
 
