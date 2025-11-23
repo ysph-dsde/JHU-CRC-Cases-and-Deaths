@@ -52,4 +52,4 @@ Details about these steps can be found in the `Git-and-GitHub/R` directory of th
   
 4. Johns Hopkins University Coronavirus Resource Center, “Time Series COVID-19 Cases and Deaths US,” Center for Systems Science and Engineering (CSSE). Accessed: Nov. 09, 2025. [Online]. Available: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series
 
-5. Shelby Golden and Howard Baik, “Getting Started with Git and GitHub,” Book of Workshops. Accessed: Nov. 06, 2025. [Online]. Available: https://ysph-dsde.github.io/Book-of-Workshops/Git-and-GitHub/
+5. Shelby Golden and Howard Baik, “Getting Started with Git and GitHub,” Book of Workshops. Accessed: Nov. 06, 2025. [Online]. Available: https://ysph-dsde.github.io/Book-of-Workshops/Workshops/Git-and-GitHub/git-github-index.html
