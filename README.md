@@ -48,7 +48,7 @@ Details about these steps can be found in the `Git-and-GitHub/R` directory of th
 
 2. Johns Hopkins University Coronavirus Resource Center, “CSSEGISandData,” Center for Systems Science and Engineering (CSSE). Accessed: Nov. 02, 2024. [Online]. Available: https://github.com/CSSEGISandData/COVID-19
 
-3. Johns Hopkins University Coronavirus Resource Center, “CSSEGISandData Data Dictionary,” Center for Systems Science and Engineering (CSSE). Accessed: Nov. 09, 2025. [Online]. Available: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data#usa-daily-state-reports-csse_covid_19_daily_reports_us
+3. Johns Hopkins University Coronavirus Resource Center, “CSSEGISandData Data Dictionary,” Center for Systems Science and Engineering (CSSE). Accessed: Nov. 09, 2025. [Online]. Available: https://ysph-dsde.github.io/Book-of-Workshops/Workshops/Git-and-GitHub/git-github-index.html
   
 4. Johns Hopkins University Coronavirus Resource Center, “Time Series COVID-19 Cases and Deaths US,” Center for Systems Science and Engineering (CSSE). Accessed: Nov. 09, 2025. [Online]. Available: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series
 
