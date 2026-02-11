@@ -12,7 +12,7 @@ While primarily intended for the Yale community, all are welcome and encouraged 
 
 **Workshop Title:** &nbsp; Getting Started with Git and GitHub Part 2
 
-**Last Updated:** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; February $11^{\text{th}}$, 2026
+**Last Updated:** &nbsp;&nbsp;&nbsp;&nbsp; February $11^{\text{th}}$, 2026
 
 **Part 2 Instructors:**
 
