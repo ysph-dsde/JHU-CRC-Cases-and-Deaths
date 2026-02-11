@@ -7,6 +7,8 @@ Yale’s [Public Health Data Science and Data Equity (DSDE)](https://ysph.yale.e
 
 While primarily intended for the Yale community, all are welcome and encouraged to attend and benefit from our offerings. If you are affiliated with Yale, you can set up an office hour appointment with one of the data scientists ([Bookings Page](https://outlook.office365.com/owa/calendar/DataScienceDataEquityOfficeHours@yale.edu/bookings/)).
 
+You can find out more about past and upcoming work on our [website](https://ysph.yale.edu/public-health-research-and-practice/research-centers-and-initiatives/public-health-data-science-and-data-equity/events/). Additional tutorials will soon be available on our YouTube channel. 
+
 
 ## About Workshop
 
