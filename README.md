@@ -1,4 +1,4 @@
-# Getting Started with Git and GitHub
+# Repository for Practicing Collaborative Projects
 
 ## About The Coffee, Cookie and Coding $\left(C^3\right)$ Workshops
 
@@ -13,6 +13,7 @@ While primarily intended for the Yale community, all are welcome and encouraged 
 **Last Dated:** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; February $11^{\text{th}}$, 2026
 
 **Part 2 Instructors:**
+
 - [Shelby Golden, M.S.](https://ysph.yale.edu/profile/shelby-golden/), Data Scientist I
 - [Howard Baik, M.S.](https://www.linkedin.com/in/howard-baik/), Former Data Scientist I at Yale School of Public Health
 
@@ -32,6 +33,7 @@ Upon completing the workshop, you will be able to:
 All session materials, interactive learning assignments, and codebase links are available in the [Book of Workshops](https://ysph-dsde.github.io/Book-of-Workshops/Workshops/Git-and-GitHub/git-github-index.html) chapter. Some of these materials have been adapted for asynchronous learning in webpage format.
 
 ## Using this Repository
+
 
 This repository contains prepared code for students to practice version control using Git and GitHub with real-world public health data. Please create a "clean-break" of the repository in your own GitHub before cloning it. Directions are available on the [Accessing the Codespaces](https://ysph-dsde.github.io/Book-of-Workshops/Workshops/Git-and-GitHub/git-github-index.html#accessing-the-codespaces) section of this workshop's Book of Workshops webpage.
 
@@ -60,5 +62,3 @@ Details about these steps can be found in the `Git-and-GitHub/Code/Data Cleaning
 4. Johns Hopkins University Coronavirus Resource Center, “Time Series COVID-19 Cases and Deaths US,” Center for Systems Science and Engineering (CSSE). Accessed: Nov. 09, 2025. [Online]. Available: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series
 
 5. Shelby Golden and Howard Baik, “Getting Started with Git and GitHub,” Book of Workshops. Accessed: Nov. 06, 2025. [Online]. Available: https://ysph-dsde.github.io/Book-of-Workshops/Workshops/Git-and-GitHub/git-github-index.html
-
-
