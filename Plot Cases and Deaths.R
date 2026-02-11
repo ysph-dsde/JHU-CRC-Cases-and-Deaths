@@ -1,12 +1,13 @@
 ## ----------------------------------------------------------------------------
 ## From Yale's Public Health Data Science and Data Equity (DSDE) Team
 ##
-## Workshop: Getting Started with Git and GitHub pt. 2
-##  Authors: Shelby Golden, M.S.
-##     Date: 2025-04-27
+##     Workshop: Getting Started with Git and GitHub Part 2
+##      Authors: Shelby Golden, M.S.
+## Last Updated: 2026-02-11
 ## 
-##    R version: 4.4.3
-## renv version: 1.0.11
+##       R version: 4.5.2
+## RStudio version: 2026.01.0+392
+##    renv version: 1.1.7
 
 
 ## ----------------------------------------------------------------------------
@@ -37,7 +38,7 @@ suppressPackageStartupMessages({
 ## Science and Engineering (CSSE) at Johns Hopkins University. We load it in
 ## directly from their GitHub page using the raw URL.
 
-covid19_cases_deaths_url <- "https://raw.githubusercontent.com/ysph-dsde/Book-of-Workshops/refs/heads/main/Git-and-GitHub/Data/Deaths%20and%20Cases%20Aggregated%20by%20Week.csv"
+covid19_cases_deaths_url <- "https://raw.githubusercontent.com/ysph-dsde/Book-of-Workshops/refs/heads/main/Workshops/Git-and-GitHub/Data/Deaths%20and%20Cases%20Aggregated%20by%20Week.csv"
 covid19_cases_deaths     <- read_csv(file = covid19_cases_deaths_url, show_col_types = FALSE) |>
   as.data.frame()
 

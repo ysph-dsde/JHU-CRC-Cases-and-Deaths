@@ -10,7 +10,7 @@ While primarily intended for the Yale community, all are welcome and encouraged 
 
 **Workshop Title:** &nbsp; Getting Started with Git and GitHub Part 2
 
-**Last Dated:** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; February $11^{\text{th}}$, 2026
+**Last Updated:** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; February $11^{\text{th}}$, 2026
 
 **Part 2 Instructors:**
 
@@ -28,7 +28,7 @@ Upon completing the workshop, you will be able to:
 - **For the analysis:** `Plot Cases and Deaths.R`
 - **R:** version 4.5.2
 - **RStudio IDE:** version 2026.01.0+392
-- ``renv`` is included to reproduce the environment.
+- **`renv`:** version 1.1.7. Included to reproduce the coding environment.
 
 All session materials, interactive learning assignments, and codebase links are available in the [Book of Workshops](https://ysph-dsde.github.io/Book-of-Workshops/Workshops/Git-and-GitHub/git-github-index.html) chapter. Some of these materials have been adapted for asynchronous learning in webpage format.
 
