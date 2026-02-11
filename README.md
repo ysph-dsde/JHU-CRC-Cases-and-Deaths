@@ -1,10 +1,12 @@
 # Repository for Practicing Collaborative Projects
 
+
 ## About The Coffee, Cookie and Coding $\left(C^3\right)$ Workshops
 
 Yale’s [Public Health Data Science and Data Equity (DSDE)](https://ysph.yale.edu/research/research-centers-and-initiatives/public-health-data-science-and-data-equity/) team hosts workshops, tutorials, and information sessions known as Coffee, Cookie and Coding $\left(C^3\right)$ Workshops. These sessions are designed to help Public Health and Biostatistics masters-level students at Yale effectively leverage computational tools and analytical methods in their educational and professional endeavors.
 
 While primarily intended for the Yale community, all are welcome and encouraged to attend and benefit from our offerings. If you are affiliated with Yale, you can set up an office hour appointment with one of the data scientists ([Bookings Page](https://outlook.office365.com/owa/calendar/DataScienceDataEquityOfficeHours@yale.edu/bookings/)).
+
 
 ## About Workshop
 
@@ -23,6 +25,7 @@ Upon completing the workshop, you will be able to:
 - Master essential Git and GitHub workflows for individual projects through hands-on practice.
 - Get introduced to collaborative workflows and teamwork strategies using guided GitHub examples.
 
+
 ## Overview Of Contents
 
 - **For the analysis:** `Plot Cases and Deaths.R`
@@ -32,8 +35,8 @@ Upon completing the workshop, you will be able to:
 
 All session materials, interactive learning assignments, and codebase links are available in the [Book of Workshops](https://ysph-dsde.github.io/Book-of-Workshops/Workshops/Git-and-GitHub/git-github-index.html) chapter. Some of these materials have been adapted for asynchronous learning in webpage format.
 
-## Using this Repository
 
+## Using this Repository
 
 This repository contains prepared code for students to practice version control using Git and GitHub with real-world public health data. Please create a "clean-break" of the repository in your own GitHub before cloning it. Directions are available on the [Accessing the Codespaces](https://ysph-dsde.github.io/Book-of-Workshops/Workshops/Git-and-GitHub/git-github-index.html#accessing-the-codespaces) section of this workshop's Book of Workshops webpage.
 
@@ -50,6 +53,7 @@ The [Johns Hopkins Coronavirus Resource Center](https://coronavirus.jhu.edu/) (J
 The data dictionaries provided by JHU CRC can be found here: [Vaccinations Dataset Data Dictionary](https://github.com/govex/COVID-19/tree/master/data_tables/vaccine_data/us_data) and [Cases and Deaths Datasets Data Dictionary](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data#usa-daily-state-reports-csse_covid_19_daily_reports_us). For our purposes, we conducted data cleaning, harmonization, and smoothing using isotonic regression. This included harmonizing the U.S. Census Bureau's 2010 to 2019 population projections with the 2020 to 2023 vintages.
 
 Details about these steps can be found in the `Git-and-GitHub/Code/Data Cleaning` and `Git-and-GitHub/Code/Population Estimates and Projections` directories ([link to code](https://github.com/ysph-dsde/Book-of-Workshops/tree/main/Workshops/Git-and-GitHub/Code)). The cleaned datasets are in the `Git-and-GitHub/Data` directory ([link to data](https://github.com/ysph-dsde/Book-of-Workshops/tree/main/Workshops/Git-and-GitHub/Data)).
+
 
 ## References
 

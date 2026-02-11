@@ -6,7 +6,7 @@
 .Rproj.user
 References.docx
 
-# Ignore the archived file.
+# Ignore file types
 *.git.zip
 *.html
 *.jpeg

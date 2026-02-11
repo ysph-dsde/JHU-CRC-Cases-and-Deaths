@@ -64,7 +64,7 @@ unique_regions = covid19_cases_deaths$Province_State |>
   (\(x) { x[x %!in% c("United States", unique_states, unique_territories)] }) () |>
   unique() |> _[1:4]
 
-unique_districts = covid19_cases_deaths$Province_State |>
+unique_divisions = covid19_cases_deaths$Province_State |>
   (\(x) { x[x %!in% c("United States", unique_states, unique_territories)] }) () |>
   unique() |> _[-c(1:4)]
 
