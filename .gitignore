@@ -1,12 +1,17 @@
+##########################
+# Standard series
+
 .
 ..
 .DS_Store
 .Rhistory
 .Rprofile
 .Rproj.user
-References.docx
 
-# Ignore file types
+##########################
+# File types
+
 *.git.zip
 *.html
 *.jpeg
+*.docx
