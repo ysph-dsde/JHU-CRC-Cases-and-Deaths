@@ -1,5 +1,5 @@
 ## ----------------------------------------------------------------------------
-## From Yale's Public Health Data Science and Data Equity (DSDE) Team
+## Produced by Yale's Public Health Data Science and Data Equity (DSDE) team
 ##
 ##     Workshop: Getting Started with Git and GitHub Part 2
 ##      Authors: Shelby Golden, M.S.
